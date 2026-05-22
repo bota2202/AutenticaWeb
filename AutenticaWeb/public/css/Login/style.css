@@ -1,6 +1,9 @@
+:root{
+    --background : #fffafa
+}
+
 *{
     margin: 0;
-    background-color: rgb(253, 255, 222);
 }
 
 html,body{
@@ -11,7 +14,6 @@ html,body{
 body{
     display: grid;
     grid-template-rows: 10% 1fr 4%;
-    
 }
 
 nav{
@@ -22,6 +24,7 @@ nav{
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
+    background-color: var(--background);
 }
 
 nav::after{
@@ -46,10 +49,10 @@ nav img:hover{
 
 main{
     grid-row: 2;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--background);
     display: grid;
     grid-template-rows: 13% 1fr 13%;
-    grid-template-columns: 35% 1fr 35%;
+    grid-template-columns: 20% 1fr 55%;
 }
 
 form{
@@ -61,7 +64,7 @@ form{
     align-items: center;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 1px 4px 4px rgba(0,0,0,0.06);
+    box-shadow: 0px 1px 4px 4px rgba(0,0,0,0.07);
     border-radius: 10px;
 }
 
@@ -69,7 +72,7 @@ form div{
     display: flex;
     flex-direction: column;
     height: 80%;
-    width: 70%;
+    width: 75%;
     background-color: rgb(255, 255, 255);
     align-items: center;
     justify-content: center;
@@ -78,27 +81,55 @@ form div{
 form div input{
     margin-bottom: 20px;
     border-radius: 7px;
-    width: 90%;
-    height: 9%;
+    width: 95%;
+    height: 12%;
     border: none;
-    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.06);
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.07);
+    font-size: medium;
+    font-weight: 400 !important;
+    padding-left: 10px;
 }
 
 form div label{
     align-self: flex-start;
     margin-left: 20px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     font-size: larger;
+    font-weight: 400 !important;
 }
 
 form button{
     border-radius: 5px;
     border: none;
-    width: 20%;
-    height: 10%;
-    margin-bottom: 10px;
+    width: 25%;
+    height: 15%;
+    margin-bottom: 12px;
     background-color: white;
-    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.06);
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.07);
+    transition:ease 1s;
+    font-size: larger;
+    font-weight: 400 !important;
+}
+
+form button:hover{
+    background-color: #f31224;
+    color: white;
+}
+
+.error-msg{
+    color: #e63946;
+}
+
+.error{
+    background-color: rgba(216, 29, 29, 0.05);
+    position: absolute;
+    width: 15%;
+    height: 4%;
+    border-radius: 10px;
+    padding-left: 1%;
+    padding-right: 1%;
+    top: 35%;
+    font-size: larger;
 }
 
 .ubuntu{
@@ -109,12 +140,14 @@ form button{
 
 form h2{
     font-size: xx-large;
+    font-weight: 430 !important;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 footer{
     grid-row: 3;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--background);
     justify-content: center;
     align-items: center;
     text-align: center;

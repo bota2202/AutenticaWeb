@@ -21,10 +21,14 @@
             @csrf
             <h2 class="ubuntu">Conecte-se</h2>
             @error('cpf')
-            <span class="ubuntu">{{ $message }}</span>
+            <div class="error">
+                <span class="ubuntu error-msg">{{ $message }}</span>
+            </div>
             @enderror
             @error('password')
-            <span>{{ $message }}</span>
+            <div class="error">
+                <span class="ubuntu error-msg">{{ $message }}</span>
+            </div>
             @enderror
             <div>
                 <label class="ubuntu" for="cpf">CPF:</label>
