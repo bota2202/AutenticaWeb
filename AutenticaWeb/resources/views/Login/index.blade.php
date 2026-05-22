@@ -19,24 +19,27 @@
     <main>
         <form action="/login" method="post">
             @csrf
-            <h2 class="ubuntu">Conecte-se</h2>
-            @error('cpf')
-            <div class="error">
-                <span class="ubuntu error-msg">{{ $message }}</span>
+            <div id="esquerda">
+                <h2 class="ubuntu">Conecte-se</h2>
+                @error('cpf')
+                <div class="error">
+                    <span class="ubuntu error-msg">{{ $message }}</span>
+                </div>
+                @enderror
+                @error('password')
+                <div class="error">
+                    <span class="ubuntu error-msg">{{ $message }}</span>
+                </div>
+                @enderror
+                <div>
+                    <label class="ubuntu" for="cpf">CPF:</label>
+                    <input class="ubuntu input-lgn" type="text" name="cpf" placeholder="Digite seu cpf" id="cpf">
+                    <label class="ubuntu" for="senha">Senha:</label>
+                    <input class="ubuntu input-lgn" type="password" name="password" placeholder="Digite sua senha" id="senha">
+                </div>
+                <button class="ubuntu" type="sumbmit">Entrar</button>
             </div>
-            @enderror
-            @error('password')
-            <div class="error">
-                <span class="ubuntu error-msg">{{ $message }}</span>
-            </div>
-            @enderror
-            <div>
-                <label class="ubuntu" for="cpf">CPF:</label>
-                <input class="ubuntu" type="text" name="cpf" placeholder="Digite seu cpf" id="cpf">
-                <label class="ubuntu" for="senha">Senha:</label>
-                <input class="ubuntu" type="text" name="password" placeholder="Digite sua senha" id="senha">
-            </div>
-            <button class="ubuntu" type="sumbmit">Entrar</button>
+            <div id="direita"></div>
         </form>
     </main>
 
@@ -44,6 +47,8 @@
         &copy Otávio Satunino da Silva
     </footer>
 
+
+    <script src="js/login.js"></script>
 </body>
 
 </html>

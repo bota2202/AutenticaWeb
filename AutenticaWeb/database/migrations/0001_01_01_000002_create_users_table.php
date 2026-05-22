@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone',15);
             $table->string('cpf',14)->unique();
-            $table->enum('role',['aluno','professor','responsavel','admin'])->default('aluno');
+            $table->enum('role',['portaria','professor','responsavel','admin'])->default('professor');
             $table->boolean('is_active')->default(true);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
