@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/login/style.css">
+    <link rel="stylesheet" href="{{ asset('css/Login/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
                     <label class="ubuntu" for="senha">Senha:</label>
                     <input class="ubuntu input-lgn" type="password" name="password" placeholder="Digite sua senha" id="senha">
                 </div>
-                <button class="ubuntu" type="sumbmit">Entrar</button>
+                <button class="ubuntu" type="submit">Entrar</button>
             </div>
             <div id="direita"></div>
         </form>
@@ -48,7 +48,7 @@
     </footer>
 
 
-    <script src="js/login.js"></script>
+    <script src="{{ asset('js/login.js') }}"></script>
 </body>
 
 </html>

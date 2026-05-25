@@ -10,37 +10,30 @@ use Illuminate\Support\Facades\Auth;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="css/Dashboard/style.css">
+    <link rel="stylesheet" href="{{ asset('css/Dashboard/style.css') }}">
 </head>
 
 <body>
     <div id="opcoes">
 
         @if (in_array(Auth::user()->role, ['admin', 'responsavel']))
-        <a class="btn-opcao ubuntu" href="/cadastro">
+        <a class="btn-opcao ubuntu" href="{{ route('usuarios.index') }}">
             <i class="fa-solid fa-user"></i>
-            Cadastrar usuário 
+            Usuários
         </a>
         @endif
 
         @if (in_array(Auth::user()->role, ['responsavel', 'admin']))
-        <a class="btn-opcao ubuntu">
+        <a class="btn-opcao ubuntu" href="{{ route('tickets.create') }}">
             <i class="fa-solid fa-ticket"></i>
             Criar autorização
         </a>
         @endif
 
-        @if (in_array(Auth::user()->role, ['responsavel', 'admin', 'professor']))
-        <a class="btn-opcao ubuntu">
+        @if (in_array(Auth::user()->role, ['responsavel', 'admin', 'professor', 'portaria']))
+        <a class="btn-opcao ubuntu" href="{{ route('notificacoes.index') }}">
             <i class="fa-solid fa-bell"></i>
             Notificações
-        </a>
-        @endif
-
-        @if (in_array(Auth::user()->role, ['portaria', 'admin']))
-        <a class="btn-opcao ubuntu">
-            <i class="fa-solid fa-check"></i>
-            Confirmar
         </a>
         @endif
 

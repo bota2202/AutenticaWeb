@@ -27,7 +27,7 @@ return new class extends Migration
             $table->boolean('absence_4')->default(false);
             $table->boolean('absence_5')->default(false);
             $table->boolean('comeback')->default(false);
-            $table->enum('status',['pendente','lida','confirmada']);
+            $table->enum('status',['pendente','lida','confirmada'])->default('pendente');
             $table->dateTime('return_scheduled_for')->nullable();
             $table->timestamps();
         });

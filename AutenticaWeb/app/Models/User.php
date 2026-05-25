@@ -40,4 +40,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Ticket::class, 'student_id');
     }
+
+    public function professorTickets()
+    {
+        return $this->hasMany(Ticket::class, 'professor_id');
+    }
 }
