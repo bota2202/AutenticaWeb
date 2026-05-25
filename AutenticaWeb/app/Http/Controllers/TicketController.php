@@ -13,15 +13,14 @@ class TicketController extends Controller
     public function create()
     {
         $professors = User::where('role', 'professor')->where('is_active', true)->orderBy('name')->get();
-        $students = User::where('is_active', true)->orderBy('name')->get();
 
-        return view('Criar_Autorizacao.index', compact('professors', 'students'));
+        return view('Criar_Autorizacao.index', compact('professors'));
     }
 
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'student_id' => 'required|exists:users,id',
+            'student_name' => 'required|string|min:3|max:255',
             'professor_id' => 'required|exists:users,id',
             'type' => 'required|in:entrada,saida',
             'scheduled_for' => 'required|date',
@@ -36,7 +35,7 @@ class TicketController extends Controller
 
         Ticket::create([
             'responsible_id' => Auth::id(),
-            'student_id' => $request->student_id,
+            'student_name' => trim($request->student_name),
             'professor_id' => $request->professor_id,
             'type' => $request->type,
             'reason' => $request->reason,

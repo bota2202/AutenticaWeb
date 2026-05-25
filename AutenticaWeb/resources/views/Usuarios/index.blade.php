@@ -99,11 +99,6 @@ function avatarInitials(string $name): string {
                         <td class="actions-cell">
                             <a href="{{ route('usuarios.edit', $user) }}" class="action-btn" title="Editar">✏</a>
                             @if ($user->id !== auth()->id())
-                            <form action="{{ route('usuarios.destroy', $user) }}" method="post" class="inline-form" onsubmit="return confirm('Excluir este usuário?');">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="action-btn" title="Excluir">🗑</button>
-                            </form>
                             @endif
                         </td>
                     </tr>

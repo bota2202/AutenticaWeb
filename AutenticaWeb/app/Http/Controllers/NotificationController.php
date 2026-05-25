@@ -10,7 +10,7 @@ class NotificationController extends Controller
 {
     public function index()
     {
-        $tickets = $this->ticketsForUser()->with(['student', 'responsible', 'professor'])->get();
+        $tickets = $this->ticketsForUser()->with(['responsible', 'professor'])->get();
 
         return view('Notificacoes.index', compact('tickets'));
     }

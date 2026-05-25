@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('responsible_id')->constrained('users');
-            $table->foreignId('student_id')->constrained('users');
+            $table->string('student_name');
             $table->foreignId('professor_id')->constrained('users');
             $table->foreignId('confirmational_id')->nullable()->constrained('users');
             $table->enum('type',['entrada','saida']);

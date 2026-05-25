@@ -45,16 +45,6 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        User::updateOrCreate(
-            ['cpf' => '333.333.333-33'],
-            [
-                'name' => 'Aluno Teste',
-                'email' => 'aluno@autentica.local',
-                'phone' => '(33) 33333-3333',
-                'role' => 'professor',
-                'password' => 'aluno123',
-                'is_active' => true,
-            ]
-        );
+        User::where('cpf', '333.333.333-33')->delete();
     }
 }

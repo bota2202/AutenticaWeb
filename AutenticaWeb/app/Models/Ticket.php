@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 
 #[Fillable([
     'responsible_id',
-    'student_id',
+    'student_name',
     'professor_id',
     'confirmational_id',
     'type',
@@ -38,11 +38,6 @@ class Ticket extends Model
             'scheduled_for' => 'datetime',
             'return_scheduled_for' => 'datetime',
         ];
-    }
-
-    public function student()
-    {
-        return $this->belongsTo(User::class, 'student_id');
     }
 
     public function responsible()

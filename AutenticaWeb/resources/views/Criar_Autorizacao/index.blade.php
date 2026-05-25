@@ -33,15 +33,8 @@
                 @csrf
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="student_id">Aluno</label>
-                        <select id="student_id" name="student_id" required>
-                            <option value="">Selecione o aluno</option>
-                            @foreach ($students as $student)
-                            <option value="{{ $student->id }}" @selected(old('student_id') == $student->id)>
-                                {{ $student->name }} ({{ $student->cpf }})
-                            </option>
-                            @endforeach
-                        </select>
+                        <label for="student_name">Nome do aluno</label>
+                        <input type="text" id="student_name" name="student_name" value="{{ old('student_name') }}" placeholder="Digite o nome completo do aluno" required autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="professor_id">Professor responsável</label>

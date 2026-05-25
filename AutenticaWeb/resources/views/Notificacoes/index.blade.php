@@ -55,7 +55,7 @@ $typeLabels = [
                 <tbody>
                     @foreach ($tickets as $ticket)
                     <tr>
-                        <td>{{ $ticket->student?->name ?? '—' }}</td>
+                        <td>{{ $ticket->student_name }}</td>
                         <td>{{ $ticket->responsible?->name ?? '—' }}</td>
                         <td>{{ $ticket->professor?->name ?? '—' }}</td>
                         <td>{{ $typeLabels[$ticket->type] ?? $ticket->type }}</td>
